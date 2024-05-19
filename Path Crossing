@@ -1,0 +1,38 @@
+class Solution {
+    public boolean isPathCrossing(String path) {
+        // HashMap<Character, Pair<Integer, Integer>> moves = new HashMap();
+        // moves.put('N', new Pair(0,1));
+        // moves.put('S', new Pair(0,-1));
+        // moves.put('E', new Pair(1,0));
+        // moves.put('W', new Pair(-1,0));
+        Set<Pair<Integer, Integer>> visit = new HashSet<>();
+        int x = 0;
+        int y = 0;
+        visit.add(new Pair<>(x, y));
+        
+
+        // for (Character c: String path) {
+        //     Pair<Integer, Integer> curr = moves.get(c);
+        //     int dx = 
+        // }
+for (char a : path.toCharArray()) {
+        if (a == 'N') {
+                x++;
+            } else if (a == 'S') {
+                x--;
+            } else if (a == 'E') {
+                y++;
+            } else {
+                y--;
+            }
+
+            if (visit.contains(new Pair<>(x, y))) {
+                return true;
+            }
+            visit.add(new Pair<>(x, y));
+        }
+        return false;
+
+
+    }
+}
