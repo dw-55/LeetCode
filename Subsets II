@@ -1,0 +1,23 @@
+class Solution {
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        List<List<Integer>> newSubset = new ArrayList<>();
+        newSubset.add(new ArrayList<>());
+        for (int i : nums) {
+            // List<Integer> secondSubset = new <List<Integer>>(nums);
+            int size = newSubset.size();
+            for (int j = 0; j < size; j++) {
+                List<Integer> third = new ArrayList<>(newSubset.get(j));
+                third.add(i);
+
+                third.sort();
+
+                if (newSubset.contains(third)) {
+                    // skip to next subset
+                } else {
+                    newSubset.add(third);
+                }
+            }
+        }
+        return newSubset;
+    }
+}
