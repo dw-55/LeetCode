@@ -9,7 +9,7 @@ class Solution {
                 List<Integer> third = new ArrayList<>(newSubset.get(j));
                 third.add(i);
 
-                third.sort();
+                // third.sort();
 
                 if (newSubset.contains(third)) {
                     // skip to next subset
